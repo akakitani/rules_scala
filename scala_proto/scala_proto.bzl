@@ -233,7 +233,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_guava",
-        artifact = "com.google.guava:guava:19.0",
+        artifact = "com.google.guava:guava:25.1-android",
         sha1 = "6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9",
         server = "scala_proto_deps_maven_server",
     )
