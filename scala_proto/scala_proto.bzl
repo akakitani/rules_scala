@@ -18,9 +18,74 @@ load(
     "create_java_provider",
 )
 
+def _default_scala_proto_extra_jars():
+    return {
+        "2.11": {
+            "scalapb_plugin": {
+                "version": "0.7.0",
+                "sha256": "10ca2ad448f69013aa453a984f0ab7431fc0dbae158f4fc21dc7739f610345e3",
+            },
+            "protoc_bridge": {
+                "version": "0.7.3",
+                "sha256": "e94cf50d9ba4b3d5f4b491cb9483b4da566afe24d0fa809a003263b4b50ff269",
+            },
+            "scalapbc": {
+                "version": "0.7.0",
+                "sha256": "af1aa0c243987bfdbf19eb8ddbaf9351a5c5a2e4fce99a1bfdf33d04938b2889",
+            },
+            "scalapb_runtime": {
+                "version": "0.7.0",
+                "sha256": "73c64f3b9c43fa896fc5d5e42bc1a3e941e2bc106d990b4ea8623116b0639917",
+            },
+            "scalapb_runtime_grpc": {
+                "version": "0.7.0",
+                "sha256": "88d62342b607f8f74cd262a5e4565ff4652eb1fa20e370f20fd816a89861e2a0",
+            },
+            "scalapb_lenses": {
+                "version": "0.7.0",
+                "sha256": "853cf830cbd6bb43e42331bf1ea5f259ef6c7085af80254bd9cd20b21f17826b",
+            },
+            "scalapb_fastparse": {
+                "version": "0.4.4",
+                "sha256": "9e07298f20ee37e828f2699b71b447008ebf122cc86cab1d1fcd8d00fad4837b",
+            },
+        },
+        "2.12": {
+            "scalapb_plugin": {
+                "version": "0.7.0",
+                "sha256": "a6ae7bc5108c40075082c9eaca68443efd8f496a7f3ee33ba2192fd36b74fb09",
+            },
+            "protoc_bridge": {
+                "version": "0.7.3",
+                "sha256": "6b83ac0be522bf868fcbab27c2b64286912924f1cdbc17e0e12e092abff8bdc5",
+            },
+            "scalapbc": {
+                "version": "0.7.0",
+                "sha256": "2c01d631d33bc4cbb1dba0d621b904044ad37a10dbc0be18caf399c8e15d7732",
+            },
+            "scalapb_runtime": {
+                "version": "0.7.0",
+                "sha256": "d8177cc6ccdeafa7659fe798401fee93929d879c196eb690a236b95eb272c711",
+            },
+            "scalapb_runtime_grpc": {
+                "version": "0.7.0",
+                "sha256": "6c2c7332535b1a065b3207dc4d8314c846cbd29d296aaba0c2b57505489a6cc0",
+            },
+            "scalapb_lenses": {
+                "version": "0.7.0",
+                "sha256": "c3b5d16dd27a44c2a67d98e47fc9a3180c1eedcaedda36b49f87b4ac321e412a",
+            },
+            "scalapb_fastparse": {
+                "version": "0.4.4",
+                "sha256": "7bc2a3131204e737f020f94e19b1e62a1bf5359f5741c35dff9351ef36d7a80e",
+            },
+        },
+    }
+
 def scala_proto_repositories(
         scala_version = _default_scala_version(),
-        maven_servers = ["http://central.maven.org/maven2"]):
+        maven_servers = ["http://central.maven.org/maven2"],
+        scala_proto_extra_jars = _default_scala_proto_extra_jars()):
     major_version = _extract_major_version(scala_version)
 
     native.maven_server(
@@ -61,15 +126,16 @@ def scala_proto_repositories(
         },
     }
 
+    scala_version_extra_jars = scala_proto_extra_jars[major_version]
     scala_version_jar_shas = scala_jar_shas[major_version]
 
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_plugin",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:compilerplugin:0.7.0",
+            "com.thesamet.scalapb:compilerplugin:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["scalapb_plugin"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_plugin"],
+        jar_sha256 = scala_version_extra_jars["scalapb_plugin"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -82,10 +148,10 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_protoc_bridge",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:protoc-bridge:0.7.3",
+            "com.thesamet.scalapb:protoc-bridge:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["protoc_bridge"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["protoc_bridge"],
+        jar_sha256 = scala_version_extra_jars["protoc_bridge"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -98,10 +164,10 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapbc",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapbc:0.7.0",
+            "com.thesamet.scalapb:scalapbc:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["scalapbc"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapbc"],
+        jar_sha256 = scala_version_extra_jars["scalapbc"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -113,10 +179,10 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_runtime",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapb-runtime:0.7.0",
+            "com.thesamet.scalapb:scalapb-runtime:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["scalapb_runtime"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_runtime"],
+        jar_sha256 = scala_version_extra_jars["scalapb_runtime"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -128,10 +194,10 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_runtime_grpc",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapb-runtime-grpc:0.7.0",
+            "com.thesamet.scalapb:scalapb-runtime-grpc:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["scalapb_runtime_grpc"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_runtime_grpc"],
+        jar_sha256 = scala_version_extra_jars["scalapb_runtime_grpc"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -143,10 +209,10 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_lenses",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:lenses:0.7.0",
+            "com.thesamet.scalapb:lenses:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["scalapb_lenses"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_lenses"],
+        jar_sha256 = scala_version_extra_jars["scalapb_lenses"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -158,10 +224,10 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_fastparse",
         artifact = _scala_mvn_artifact(
-            "com.lihaoyi:fastparse:0.4.4",
+            "com.lihaoyi:fastparse:{extra_jar_version}".format(extra_jar_ersion=scala_version_extra_jars["scalapb_fastparse"]["version"]),
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_fastparse"],
+        jar_sha256 = scala_version_extra_jars["scalapb_fastparse"]["sha256"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
