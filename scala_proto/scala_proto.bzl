@@ -69,7 +69,6 @@ def scala_proto_repositories(
             "com.thesamet.scalapb:compilerplugin:0.8.4",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_plugin"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -85,7 +84,6 @@ def scala_proto_repositories(
             "com.thesamet.scalapb:protoc-bridge:0.7.3",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["protoc_bridge"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -101,7 +99,6 @@ def scala_proto_repositories(
             "com.thesamet.scalapb:scalapbc:0.8.4",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapbc"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -116,7 +113,6 @@ def scala_proto_repositories(
             "com.thesamet.scalapb:scalapb-runtime:0.8.4",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_runtime"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -131,7 +127,6 @@ def scala_proto_repositories(
             "com.thesamet.scalapb:scalapb-runtime-grpc:0.8.4",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_runtime_grpc"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -146,7 +141,6 @@ def scala_proto_repositories(
             "com.thesamet.scalapb:lenses:0.8.4",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_lenses"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -161,7 +155,6 @@ def scala_proto_repositories(
             "com.lihaoyi:fastparse:1.0.0",
             major_version,
         ),
-        jar_sha256 = scala_version_jar_shas["scalapb_fastparse"],
         licenses = ["notice"],
         server_urls = maven_servers,
     )
@@ -174,7 +167,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_grpc_core",
         artifact = "io.grpc:grpc-core:1.18.0",
-        sha1 = "a9b38b4a19af3ef208f4f6bf7871876d959c5eb1",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -186,7 +178,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_grpc_stub",
         artifact = "io.grpc:grpc-stub:1.18.0",
-        sha1 = "60bdfa9d8c664a9d87ae461106eff6eed8da6c54",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -198,7 +189,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_grpc_protobuf",
         artifact = "io.grpc:grpc-protobuf:1.18.0",
-        sha1 = "9562e977cacd6e128a31686c3e6948d61873c496",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -210,7 +200,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_grpc_netty",
         artifact = "io.grpc:grpc-netty:1.18.0",
-        sha1 = "cc3831fccb76cfe21445f75cc055b5ffd979dc54",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -222,7 +211,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_grpc_context",
         artifact = "io.grpc:grpc-context:1.18.0",
-        sha1 = "28accd419b18d59055b8999f78f5cb7767c7bde8",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -234,7 +222,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_guava",
         artifact = "com.google.guava:guava:25.1-android",
-        sha1 = "6ce200f6b23222af3d8abb6b6459e6c44f4bb0e9",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -246,7 +233,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_google_instrumentation",
         artifact = "com.google.instrumentation:instrumentation-api:0.3.0",
-        sha1 = "a2e145e7a7567c6372738f5c5a6f3ba6407ac354",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -258,7 +244,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_codec",
         artifact = "io.netty:netty-codec:4.1.32.Final",
-        sha1 = "1bd0a2d032e5c7fc3f42c1b483d0f4c57eb516a3",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -282,7 +267,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_codec_socks",
         artifact = "io.netty:netty-codec-socks:4.1.32.Final",
-        sha1 = "7f7c5f5b154646d7c571f8ca944fb813f71b1d51",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -294,7 +278,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_codec_http2",
         artifact = "io.netty:netty-codec-http2:4.1.32.Final",
-        sha1 = "105a99ee5767463370ccc3d2e16800bd99f5648e",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -306,7 +289,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_handler",
         artifact = "io.netty:netty-handler:4.1.32.Final",
-        sha1 = "db01139bfb11afd009a695eef55b43bbf22c4ef5",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -318,7 +300,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_buffer",
         artifact = "io.netty:netty-buffer:4.1.32.Final",
-        sha1 = "43292c2622e340a0d07178c341ca3bdf3d662034",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -330,7 +311,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_transport",
         artifact = "io.netty:netty-transport:4.1.32.Final",
-        sha1 = "905b5dadce881c9824b3039c0df36dabbb7b6a07",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -342,7 +322,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_resolver",
         artifact = "io.netty:netty-resolver:4.1.32.Final",
-        sha1 = "2e116cdd5edc01b2305072b1dbbd17c0595dbfef",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -354,7 +333,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_common",
         artifact = "io.netty:netty-common:4.1.32.Final",
-        sha1 = "ee62c80318413d2375d145e51e48d7d35c901324",
         server = "scala_proto_deps_maven_server",
     )
 
@@ -366,7 +344,6 @@ def scala_proto_repositories(
     native.maven_jar(
         name = "scala_proto_rules_netty_handler_proxy",
         artifact = "io.netty:netty-handler-proxy:4.1.32.Final",
-        sha1 = "c4d22e8b9071a0ea8d75766d869496c32648a758",
         server = "scala_proto_deps_maven_server",
     )
 
