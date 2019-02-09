@@ -257,7 +257,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_codec",
-        artifact = "io.netty:netty-codec:4.1.8.Final",
+        artifact = "io.netty:netty-codec:4.1.32.Final",
         sha1 = "1bd0a2d032e5c7fc3f42c1b483d0f4c57eb516a3",
         server = "scala_proto_deps_maven_server",
     )
@@ -269,7 +269,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_codec_http",
-        artifact = "io.netty:netty-codec-http:4.1.8.Final",
+        artifact = "io.netty:netty-codec-http:4.1.32.Final",
         sha1 = "1e88617c4a6c88da7e86fdbbd9494d22a250c879",
         server = "scala_proto_deps_maven_server",
     )
@@ -281,7 +281,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_codec_socks",
-        artifact = "io.netty:netty-codec-socks:4.1.8.Final",
+        artifact = "io.netty:netty-codec-socks:4.1.32.Final",
         sha1 = "7f7c5f5b154646d7c571f8ca944fb813f71b1d51",
         server = "scala_proto_deps_maven_server",
     )
@@ -293,7 +293,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_codec_http2",
-        artifact = "io.netty:netty-codec-http2:4.1.8.Final",
+        artifact = "io.netty:netty-codec-http2:4.1.32.Final",
         sha1 = "105a99ee5767463370ccc3d2e16800bd99f5648e",
         server = "scala_proto_deps_maven_server",
     )
@@ -305,7 +305,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_handler",
-        artifact = "io.netty:netty-handler:4.1.8.Final",
+        artifact = "io.netty:netty-handler:4.1.32.Final",
         sha1 = "db01139bfb11afd009a695eef55b43bbf22c4ef5",
         server = "scala_proto_deps_maven_server",
     )
@@ -317,7 +317,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_buffer",
-        artifact = "io.netty:netty-buffer:4.1.8.Final",
+        artifact = "io.netty:netty-buffer:4.1.32.Final",
         sha1 = "43292c2622e340a0d07178c341ca3bdf3d662034",
         server = "scala_proto_deps_maven_server",
     )
@@ -329,7 +329,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_transport",
-        artifact = "io.netty:netty-transport:4.1.8.Final",
+        artifact = "io.netty:netty-transport:4.1.32.Final",
         sha1 = "905b5dadce881c9824b3039c0df36dabbb7b6a07",
         server = "scala_proto_deps_maven_server",
     )
@@ -341,7 +341,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_resolver",
-        artifact = "io.netty:netty-resolver:4.1.8.Final",
+        artifact = "io.netty:netty-resolver:4.1.32.Final",
         sha1 = "2e116cdd5edc01b2305072b1dbbd17c0595dbfef",
         server = "scala_proto_deps_maven_server",
     )
@@ -353,7 +353,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_common",
-        artifact = "io.netty:netty-common:4.1.8.Final",
+        artifact = "io.netty:netty-common:4.1.32.Final",
         sha1 = "ee62c80318413d2375d145e51e48d7d35c901324",
         server = "scala_proto_deps_maven_server",
     )
@@ -365,7 +365,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_netty_handler_proxy",
-        artifact = "io.netty:netty-handler-proxy:4.1.8.Final",
+        artifact = "io.netty:netty-handler-proxy:4.1.32.Final",
         sha1 = "c4d22e8b9071a0ea8d75766d869496c32648a758",
         server = "scala_proto_deps_maven_server",
     )
