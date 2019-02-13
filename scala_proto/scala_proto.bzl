@@ -66,7 +66,7 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_plugin",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:compilerplugin:0.7.0",
+            "com.thesamet.scalapb:compilerplugin:0.8.4",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_plugin"],
@@ -98,7 +98,7 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapbc",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapbc:0.7.0",
+            "com.thesamet.scalapb:scalapbc:0.8.4",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapbc"],
@@ -113,7 +113,7 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_runtime",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapb-runtime:0.7.0",
+            "com.thesamet.scalapb:scalapb-runtime:0.8.4",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_runtime"],
@@ -128,7 +128,7 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_runtime_grpc",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:scalapb-runtime-grpc:0.7.0",
+            "com.thesamet.scalapb:scalapb-runtime-grpc:0.8.4",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_runtime_grpc"],
@@ -143,7 +143,7 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_lenses",
         artifact = _scala_mvn_artifact(
-            "com.thesamet.scalapb:lenses:0.7.0",
+            "com.thesamet.scalapb:lenses:0.8.4",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_lenses"],
