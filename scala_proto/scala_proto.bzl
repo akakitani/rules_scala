@@ -173,7 +173,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_grpc_core",
-        artifact = "io.grpc:grpc-core:1.3.1",
+        artifact = "io.grpc:grpc-core:1.18.0",
         sha1 = "a9b38b4a19af3ef208f4f6bf7871876d959c5eb1",
         server = "scala_proto_deps_maven_server",
     )
@@ -185,7 +185,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_grpc_stub",
-        artifact = "io.grpc:grpc-stub:1.3.1",
+        artifact = "io.grpc:grpc-stub:1.18.0",
         sha1 = "60bdfa9d8c664a9d87ae461106eff6eed8da6c54",
         server = "scala_proto_deps_maven_server",
     )
@@ -197,7 +197,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_grpc_protobuf",
-        artifact = "io.grpc:grpc-protobuf:1.3.1",
+        artifact = "io.grpc:grpc-protobuf:1.18.0",
         sha1 = "9562e977cacd6e128a31686c3e6948d61873c496",
         server = "scala_proto_deps_maven_server",
     )
@@ -209,7 +209,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_grpc_netty",
-        artifact = "io.grpc:grpc-netty:1.3.1",
+        artifact = "io.grpc:grpc-netty:1.18.0",
         sha1 = "cc3831fccb76cfe21445f75cc055b5ffd979dc54",
         server = "scala_proto_deps_maven_server",
     )
@@ -221,7 +221,7 @@ def scala_proto_repositories(
 
     native.maven_jar(
         name = "scala_proto_rules_grpc_context",
-        artifact = "io.grpc:grpc-context:1.3.1",
+        artifact = "io.grpc:grpc-context:1.18.0",
         sha1 = "28accd419b18d59055b8999f78f5cb7767c7bde8",
         server = "scala_proto_deps_maven_server",
     )
