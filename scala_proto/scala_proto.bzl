@@ -375,6 +375,28 @@ def scala_proto_repositories(
         actual = "@scala_proto_rules_netty_handler_proxy//jar",
     )
 
+    native.maven_jar(
+        name = "scala_proto_rules_opencensus_api",
+        artifact = "io.opencensus:opencensus-api:0.18.0",
+        server = "scala_proto_deps_maven_server",
+    )
+
+    native.bind(
+        name = "io_bazel_rules_scala/dependency/proto/opencensus_api",
+        actual = "@scala_proto_rules_opencensus_api//jar",
+    )
+
+    native.maven_jar(
+        name = "scala_proto_rules_opencensus_contrib_grpc_metrics",
+        artifact = "io.opencensus:opencensus-contrib-grpc-metrics:0.18.0",
+        server = "scala_proto_deps_maven_server",
+    )
+
+    native.bind(
+        name = "io_bazel_rules_scala/dependency/proto/opencensus_contrib_grpc_metrics",
+        actual = "@scala_proto_rules_opencensus_contrib_grpc_metrics//jar",
+    )
+
 def _root_path(f):
     if f.is_source:
         return f.owner.workspace_root
@@ -503,6 +525,8 @@ GRPC_DEPS = [
     "//external:io_bazel_rules_scala/dependency/proto/netty_resolver",
     "//external:io_bazel_rules_scala/dependency/proto/netty_common",
     "//external:io_bazel_rules_scala/dependency/proto/netty_handler_proxy",
+    "//external:io_bazel_rules_scala/dependency/proto/opencensus_api",
+    "//external:io_bazel_rules_scala/dependency/proto/opencensus_contrib_grpc_metrics",
 ]
 """Generate scalapb bindings for a set of proto_library targets.
 
