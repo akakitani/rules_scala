@@ -158,7 +158,7 @@ def scala_proto_repositories(
     _scala_maven_import_external(
         name = "scala_proto_rules_scalapb_fastparse",
         artifact = _scala_mvn_artifact(
-            "com.lihaoyi:fastparse:0.4.4",
+            "com.lihaoyi:fastparse:1.0.0",
             major_version,
         ),
         jar_sha256 = scala_version_jar_shas["scalapb_fastparse"],
