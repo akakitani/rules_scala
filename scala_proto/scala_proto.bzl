@@ -42,13 +42,13 @@ def scala_proto_repositories(
 
     scala_jar_shas = {
         "2.11": {
-            "scalapb_plugin": "10ca2ad448f69013aa453a984f0ab7431fc0dbae158f4fc21dc7739f610345e3",
+            "scalapb_plugin": "b67e563d06f1bbb6ea704a063760a85ec7fb5809828402364d5418dd1c5cab06",
             "protoc_bridge": "e94cf50d9ba4b3d5f4b491cb9483b4da566afe24d0fa809a003263b4b50ff269",
-            "scalapbc": "af1aa0c243987bfdbf19eb8ddbaf9351a5c5a2e4fce99a1bfdf33d04938b2889",
-            "scalapb_runtime": "73c64f3b9c43fa896fc5d5e42bc1a3e941e2bc106d990b4ea8623116b0639917",
-            "scalapb_runtime_grpc": "88d62342b607f8f74cd262a5e4565ff4652eb1fa20e370f20fd816a89861e2a0",
-            "scalapb_lenses": "853cf830cbd6bb43e42331bf1ea5f259ef6c7085af80254bd9cd20b21f17826b",
-            "scalapb_fastparse": "9e07298f20ee37e828f2699b71b447008ebf122cc86cab1d1fcd8d00fad4837b",
+            "scalapbc": "120b7d7f42051da3406b72480eeb331a985a99b2a3c999243fc3c11e6b7530b2",
+            "scalapb_runtime": "40f93a9ec5ea4dc21e1fa4fb4088cf76768dd3c0137c3fa6683ae0d9a17f5d44",
+            "scalapb_runtime_grpc": "93a9f5f1c64ef83aacc2e46c9c09f3156f59d979b5b5565eac9437897882c465",
+            "scalapb_lenses": "bacdee7d8b6fa7a822a3ec55d12a15896d54fe2e4f22bbd8a5194e9bba751193",
+            "scalapb_fastparse": "1b6d9fc75ca8a62abe0dd7a71e62aa445f2d3198c86aab5088e1f90a96ade30b",
         },
         "2.12": {
             "scalapb_plugin": "a6ae7bc5108c40075082c9eaca68443efd8f496a7f3ee33ba2192fd36b74fb09",
